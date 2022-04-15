@@ -1,0 +1,15 @@
+body {
+    display: flex;
+    background-color: aliceblue;
+    justify-content: center;
+    align-items: center;
+}
+
+.calculator {
+    display: flex;
+    background-color: blue;
+    height: 500px;
+    width: 350px;
+    vertical-align:auto;
+    margin-top: 200px;
+}
