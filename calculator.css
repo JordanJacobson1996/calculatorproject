@@ -7,6 +7,7 @@ body {
 
 .calculator {
     display: flex;
+    flex-direction: column;
     background-color: lightgray;
     height: 500px;
     width: 350px;
@@ -14,12 +15,29 @@ body {
     margin-top: 200px;
     border-style: solid;
     border-color: cornflowerblue;
-    justify-content: center;
+    align-items: center;
 }
 
 .display {
     background-color: aqua;
     height: 100px;
     width: 300px;
-    margin: 20px;
+    margin: 25px;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 30px;
+    width: 300px;
+    height: auto;
+    margin: 25px;
+    border-style: solid;
+}
+
+.buttonRow {
+    display: flex;
+    width: 300px;
+    height: 75px;
 }
