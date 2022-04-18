@@ -5,10 +5,18 @@ body {
     align-items: center;
 }
 
+button {
+    background-color: #536878;
+    height: 60px;
+    width: 60px;
+    font-size: 20px;
+    text-decoration-color: white;
+}
+
 .calculator {
     display: flex;
     flex-direction: column;
-    background-color: lightgray;
+    background-color: #708090;
     height: 500px;
     width: 350px;
     vertical-align:auto;
@@ -46,5 +54,5 @@ body {
 .button {
     width: 60px;
     height: 60px;
-    border-style: solid;
+    background-color: #536878;
 }
