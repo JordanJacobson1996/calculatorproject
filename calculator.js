@@ -1,6 +1,7 @@
 const buttons = document.querySelectorAll('button');
 let numArr = [];
 let opArr = [];
+let valueArr = [];
 
 function add (num1, num2){
     return num1 + num2;
@@ -18,46 +19,52 @@ function divide (num1, num2){
     return num1/num2;
 }
 
+function updateValue (numArr){
+    numArr = numArr.join("");
+    valueArr.push(parseFloat(numArr));
+    return numArr
+}
+
 function buttonPress (buttonId){
     switch(buttonId){
         case '0':
-            numArr.push(0);
+            numArr.push('0');
             break;
             
         case '1':
-            numArr.push(1);
+            numArr.push('1');
             break;
 
         case '2':
-            numArr.push(2);
+            numArr.push('2');
             break;
                 
         case '3':
-            numArr.push(3);
+            numArr.push('3');
             break;
 
         case '4':
-            numArr.push(4);
+            numArr.push('4');
             break;
                 
         case '5':
-            numArr.push(5);
+            numArr.push('5');
             break;
     
         case '6':
-            numArr.push(6);
+            numArr.push('6');
             break;
                     
         case '7':
-            numArr.push(7);
+            numArr.push('7');
             break;
         
         case '8':
-            numArr.push(8);
+            numArr.push('8');
             break;
         
         case '9':
-            numArr.push(9);
+            numArr.push('9');
             break; 
 
         case '.':
@@ -66,18 +73,22 @@ function buttonPress (buttonId){
             
         case '+':
             opArr.push('+');
+            updateValue(numArr);
             break;
         
         case '-':
             opArr.push('-');
+            updateValue(numArr);
             break;
         
-        case 'X':
+        case 'x':
             opArr.push('x');
+            updateValue(numArr);
             break;
             
         case '/':
             opArr.push('/');
+            updateValue(numArr);
             break;
     }
 }
