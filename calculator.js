@@ -8,54 +8,70 @@ function updateValue (){
     valueArr.push(parseFloat(numArr));
 }
 
+function updateDisplay(buttonId){
+    document.getElementById("inputDisplay").textContent += buttonId;
+}
+
 
 function buttonPress (buttonId){
     switch(buttonId){
         case '0':
+            updateDisplay (buttonId);
             numArr.push('0');
             break;
             
         case '1':
+            updateDisplay (buttonId);
             numArr.push('1');
             break;
 
         case '2':
+            updateDisplay (buttonId)
             numArr.push('2');
             break;
                 
         case '3':
+            updateDisplay (buttonId)
             numArr.push('3');
             break;
 
         case '4':
+            updateDisplay (buttonId)
             numArr.push('4');
             break;
                 
         case '5':
+            updateDisplay (buttonId)
             numArr.push('5');
             break;
     
         case '6':
+            updateDisplay (buttonId)
             numArr.push('6');
             break;
                     
         case '7':
+            updateDisplay (buttonId)
             numArr.push('7');
             break;
         
         case '8':
+            updateDisplay (buttonId)
             numArr.push('8');
             break;
         
         case '9':
+            updateDisplay (buttonId)
             numArr.push('9');
             break; 
 
         case '.':
+            updateDisplay (buttonId)
             numArr.push('.');
             break;
             
         case '+':
+            updateDisplay (buttonId)
             if (valueArr.length > 0){
                 opArr.push('+');
             } else {
@@ -66,6 +82,7 @@ function buttonPress (buttonId){
             break;
         
         case '-':
+            updateDisplay (buttonId)
             if (valueArr.length > 0){
                 opArr.push('-');
             } else {
@@ -76,6 +93,7 @@ function buttonPress (buttonId){
             break;
         
         case 'x':
+            updateDisplay (buttonId)
             if (valueArr.length > 0){
                 opArr.push('x');
             } else {
@@ -86,6 +104,7 @@ function buttonPress (buttonId){
             break;
             
         case '/':
+            updateDisplay (buttonId)
             if (valueArr.length > 0){
                 opArr.push('/');
             } else {
