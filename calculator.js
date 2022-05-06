@@ -2,6 +2,7 @@ const buttons = document.querySelectorAll('button');
 let numArr = [];
 let opArr = [];
 let valueArr = [];
+let answer;
 
 function updateValue (){
     numArr = numArr.join("");
@@ -11,6 +12,22 @@ function updateValue (){
 function updateDisplay(buttonId){
     document.getElementById("inputDisplay").textContent += buttonId;
 }
+
+function clearInputDisplay() {
+    document.getElementById("inputDisplay").textContent = "";
+}
+
+function updateAnswerDisplay(answer) {
+    document.getElementById("answerDisplay").textContent = answer;
+}
+
+function evalFloatOrInt(valueArr){
+        if (valueArr[0] - Math.floor(valueArr[0]) !== 0){
+            return valueArr[0].toFixed(2);
+        } else{
+            return parseInt(valueArr[0]);
+        }
+    }
 
 
 function buttonPress (buttonId){
@@ -115,6 +132,7 @@ function buttonPress (buttonId){
             break;
 
         case '=':
+            clearInputDisplay()
             updateValue();
             numArr = [];
             if (opArr.length >= valueArr.length){
@@ -137,7 +155,13 @@ function buttonPress (buttonId){
                 }
             }
             opArr = [];
-            console.log(valueArr);
+            answer = evalFloatOrInt(valueArr);
+            updateAnswerDisplay (answer);
+            break;
+
+        case 'clear':
+            location.reload();
+
         }
     }
 

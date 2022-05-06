@@ -16,7 +16,7 @@ button {
     display: flex;
     flex-direction: column;
     background-color: #708090;
-    height: 500px;
+    height: 575px;
     width: 350px;
     vertical-align:auto;
     margin-top: 200px;
@@ -38,7 +38,7 @@ button {
     justify-content: center;
     gap: 20px;
     width: 300px;
-    height: 300px;
+    height: 350px;
     margin: 25px;
 }
 
@@ -71,6 +71,7 @@ button {
     height: 45px;
 }
 
+
 #inputDisplay {
     font-size: 42px;
 }
@@ -78,3 +79,8 @@ button {
 #answerDisplay {
     font-size: 42px;
 }
+
+#clear {
+    width: 120px;
+}
+
