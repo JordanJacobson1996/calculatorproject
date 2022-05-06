@@ -61,3 +61,20 @@ button {
     height: 60px;
     background-color: #536878;
 }
+
+
+.display-box {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    width: 295px;
+    height: 45px;
+}
+
+#inputDisplay {
+    font-size: 42px;
+}
+
+#answerDisplay {
+    font-size: 42px;
+}

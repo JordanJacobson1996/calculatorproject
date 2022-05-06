@@ -3,22 +3,6 @@ let numArr = [];
 let opArr = [];
 let valueArr = [];
 
-function add (num1, num2){
-    return num1 + num2;
-}
-
-function subtract (num1, num2){
-    return num1 - num2;
-}
-
-function multiply (num1, num2){
-    return num1 * num2;
-}
-
-function divide (num1, num2){
-    return num1/num2;
-}
-
 function updateValue (){
     numArr = numArr.join("");
     valueArr.push(parseFloat(numArr));
@@ -143,3 +127,5 @@ buttons.forEach((button) => {
         buttonPress(button.id);
     });
 });
+
+
