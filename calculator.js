@@ -19,10 +19,11 @@ function divide (num1, num2){
     return num1/num2;
 }
 
-function updateValue (numArr){
+function updateValue (){
     numArr = numArr.join("");
     valueArr.push(parseFloat(numArr));
 }
+
 
 function buttonPress (buttonId){
     switch(buttonId){
@@ -71,33 +72,71 @@ function buttonPress (buttonId){
             break;
             
         case '+':
-            opArr.push('+');
-            updateValue(numArr);
-            numArr = [];
+            if (valueArr.length > 0){
+                opArr.push('+');
+            } else {
+                opArr.push('+');
+                updateValue(numArr);
+                numArr = [];
+            }
             break;
         
         case '-':
-            opArr.push('-');
-            updateValue(numArr);
-            numArr = [];
+            if (valueArr.length > 0){
+                opArr.push('-');
+            } else {
+                opArr.push('-');
+                updateValue(numArr);
+                numArr = [];
+            }
             break;
         
         case 'x':
-            opArr.push('x');
-            updateValue(numArr);
-            numArr = [];
+            if (valueArr.length > 0){
+                opArr.push('x');
+            } else {
+                opArr.push('x');
+                updateValue(numArr);
+                numArr = [];
+            }
             break;
             
         case '/':
-            opArr.push('/');
-            updateValue(numArr);
-            numArr = [];
+            if (valueArr.length > 0){
+                opArr.push('/');
+            } else {
+                opArr.push('/');
+                updateValue(numArr);
+                numArr = [];
+            }
             break;
 
         case '=':
-            
+            updateValue();
+            numArr = [];
+            if (opArr.length >= valueArr.length){
+                return "error";
+            } else {
+                for (let i = 0; i < opArr.length; i++){
+                    if (opArr[i] === '+'){
+                        valueArr.unshift(valueArr[0] + valueArr[1]);
+                        valueArr.splice(1, 2);
+                    } else if (opArr[i] === '-'){
+                        valueArr.unshift(valueArr[0] - valueArr[1]);
+                        valueArr.splice(1, 2);
+                    } else if (opArr[i] === 'x'){
+                        valueArr.unshift(valueArr[0] * valueArr[1]);
+                        valueArr.splice(1, 2);
+                    } else if (opArr[i] === '/'){
+                        valueArr.unshift(valueArr[0] / valueArr[1]);
+                        valueArr.splice(1, 2);
+                    }
+                }
+            }
+            opArr = [];
+            console.log(valueArr);
+        }
     }
-}
 
 buttons.forEach((button) => {
     button.addEventListener('click', () =>{
