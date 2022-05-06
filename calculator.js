@@ -22,7 +22,6 @@ function divide (num1, num2){
 function updateValue (numArr){
     numArr = numArr.join("");
     valueArr.push(parseFloat(numArr));
-    return numArr
 }
 
 function buttonPress (buttonId){
@@ -74,22 +73,29 @@ function buttonPress (buttonId){
         case '+':
             opArr.push('+');
             updateValue(numArr);
+            numArr = [];
             break;
         
         case '-':
             opArr.push('-');
             updateValue(numArr);
+            numArr = [];
             break;
         
         case 'x':
             opArr.push('x');
             updateValue(numArr);
+            numArr = [];
             break;
             
         case '/':
             opArr.push('/');
             updateValue(numArr);
+            numArr = [];
             break;
+
+        case '=':
+            
     }
 }
 
